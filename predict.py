@@ -55,7 +55,7 @@ def test(dataloader, model, loss_fn):
             tLabel = y[batch].unsqueeze(0)
             tLabel = tLabel.to(device)
             
-            pred = model(tData) # Erro
+            pred = model(tData)
             testLoss += loss_fn(pred, tLabel).item()
             correct += (pred.argmax(1) == tLabel).type(torch.float).sum().item()
             if batch % 100 == 0:
